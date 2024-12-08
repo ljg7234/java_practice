@@ -1,14 +1,9 @@
 package practice;
 
 public class Calculator {
-    static double pi = 3.14159;
-
-    static int plus(int x,int y){
-        return x + y;
-    }
-
-    static int minus(int x,int y){
-        return x - y;
+    public double areaCircle(double r){
+        System.out.println("caculator 객체의 areaCircle () 실행");
+        return 3.14159 * r * r;
     }
 
 
