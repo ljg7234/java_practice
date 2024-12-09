@@ -1,12 +1,8 @@
 package practice;
 
-public class Television {
-    static String company = "MyCompany";
-    static String model = "LCD";
-    static String info;
-
-    static {
-        info = company + "-" + model;
+public class Television implements RemoteControl{
+    @Override
+    public void turnOn(){
+        System.out.println("TV를 켭니다");
     }
-
 }

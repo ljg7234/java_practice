@@ -1,12 +1,16 @@
 package practice;
 
-public class Phone {
-    public String model;
-    public String color;
+public abstract class Phone {
+    String owner;
 
-    public Phone(String model,String color) {
-        this.model = model;
-        this.color = color;
-        System.out.println("phone() 생성자 실행");
+    Phone(String owner){
+        this.owner = owner;
+    }
+
+    void turnOn(){
+        System.out.println("폰 전원을 켭니다");
+    }
+    void turnOff(){
+        System.out.println("폰 전원을 끕니다");
     }
 }
