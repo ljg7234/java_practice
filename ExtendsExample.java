@@ -1,20 +1,14 @@
 package practice;
 
-public class SealedExample {
+public class ExtendsExample {
     public static void main(String[] args) {
-        ImplClass impl = new ImplClass();
-        impl.methodA();
-        impl.methodB();
-        impl.methodC();
-
+        InterfaceImpl impl = new InterfaceImpl();
         InterfaceA ia = impl;
         ia.methodA();
         System.out.println();
-
         InterfaceB ib = impl;
-        ib.methodA();
         ib.methodB();
-
+        System.out.println();
         InterfaceC ic = impl;
         ic.methodA();
         ic.methodB();

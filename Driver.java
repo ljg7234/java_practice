@@ -1,7 +1,7 @@
 package practice;
 
 public class Driver {
-    public void drive(Vehicle vehicle){
+    void drive(Vehicle vehicle){
         vehicle.run();
     }
 }
