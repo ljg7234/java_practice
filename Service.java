@@ -1,33 +1,18 @@
 package practice;
 
-public interface Service {
-    default void defaultMethod1(){
-        System.out.println("defaultMethod1 중복 코드");
-        defaultCommon();
+public class Service {
+    @PrintAnnotation
+    public void method1(){
+        System.out.println("실행 내용1");
     }
 
-    default void defaultMethod2(){
-        System.out.println("defaultMethod2 중복 코드");
-        defaultCommon();
+    @PrintAnnotation("*")
+    public void method2(){
+        System.out.println("실행 내용2");
     }
 
-    private void defaultCommon(){
-        System.out.println("defaultMethod 중복 코드A");
-        System.out.println("defaultMethod 중복 코드B");
-    }
-
-    static void staticMethod1(){
-        System.out.println("staticMethod1 종속 코드");
-        staticCommon();
-    }
-
-    static void staticMethod2(){
-        System.out.println("staticMethod2 종속 코드");
-        staticCommon();
-    }
-
-    private static void staticCommon(){
-        System.out.println("staticMethod 중복 코드C");
-        System.out.println("staticMethod 중복 코드D");
+    @PrintAnnotation(value = "#", number = 20)
+    public void method3(){
+        System.out.println("실행 내용3");
     }
 }
