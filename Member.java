@@ -1,25 +1,20 @@
 package practice;
 
-public class Member {
-    public String name;
-    public int age;
+import java.io.Serializable;
 
-    public Member(String name,int age){
+public class Member implements Serializable {
+    private static final long serialVersionUID = -622284561026719240L;
+    private String id;
+    private String name;
+
+
+    public Member(String id,String name){
+        this.id = id;
         this.name = name;
-        this.age = age;
     }
 
     @Override
-    public int hashCode(){
-        return name.hashCode() + age;
-    }
-
-    @Override
-    public boolean equals(Object obj){
-        if(obj instanceof Member target){
-            return target.name.equals(name) && (target.age == age);
-        } else {
-            return false;
-        }
+    public String toString(){
+        return id + ": " + name;
     }
 }

@@ -1,17 +1,17 @@
 package practice;
 
-public class Product<K,M> {
-    private K kind;
-    private M model;
+import java.io.Serializable;
 
-    public K getKind() {return this.kind;}
-    public M getModel() {return this.model;}
-    public void setKind(K kind) {
-        this.kind = kind;
+public class Product implements Serializable {
+    private static final long serialVersionUID = -622284561026719240L;
+    private String name;
+    private int price;
+
+    public Product(String name,int price){
+        this.name = name;
+        this.price = price;
     }
-    public void setModel(M model){
-        this.model = model;
-    }
 
-
+    @Override
+    public String toString(){return name + ": " + price;}
 }
