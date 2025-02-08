@@ -16,7 +16,7 @@ public class SocketClient {
     String clientIp;
     String chatName;
 
-    public SocketClient(ChatServer chatServer,Socket socket){
+    public SocketClient(ChatServer chatServer, Socket socket){
         try{
             this.chatServer = chatServer;
             this.socket = socket;
@@ -32,7 +32,7 @@ public class SocketClient {
 
     public void receive(){
         chatServer.threadPool.execute(()-> {
-            try {
+            try{
                 while(true){
                     String receiveJson = dis.readUTF();
                     JSONObject jsonObject = new JSONObject(receiveJson);
@@ -49,22 +49,19 @@ public class SocketClient {
                             break;
                     }
                 }
-            } catch (IOException e){
+            }catch (IOException e){
                 chatServer.sendToAll(this,"나가셨습니다");
                 chatServer.removeSocketClient(this);
             }
         });
     }
-
     public void send(String json){
         try{
             dos.writeUTF(json);
             dos.flush();
         } catch (IOException e){
-
         }
     }
-
     public void close(){
         try{
             socket.close();
